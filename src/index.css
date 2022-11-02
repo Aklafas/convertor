@@ -1,0 +1,66 @@
+body {
+  background-color: #ffdabf;
+}
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+.App {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  grid-column-gap: 30px;
+  width: 90%;
+  margin: 200px auto;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+  min-width: 600px;
+}
+
+@media (max-width:1200px) {
+  .App {
+    grid-template-columns: 1fr;
+  }
+  .block input{
+    margin-bottom: 40px;
+  }
+}
+.block input {
+  border: 1px solid rgba(255, 0, 0, 0.1);
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 20px 20px;
+  letter-spacing: 1.3px;
+  outline: none;
+  margin-top: 40px;
+  border-radius: 15px;
+  width: 100%;
+}
+.currencies {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.currencies li {
+  display: inline-flex;
+  padding: 10px 20px;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  justify-content: center;
+  flex: 1;
+}
+.currencies li:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.currencies li:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.currencies li.active {
+  background-color: #ff0000;
+  color: #fff;
+}
