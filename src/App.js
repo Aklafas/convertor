@@ -1,8 +1,16 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Block } from './Block';
 import './index.css';
+const tg = window.Telegram.WebApp;
 
 function App() {
+  useEffect(() => {
+    tg.ready();// метод позволяет отследить, когда приложение готово к отображению.
+  }, [])
+  const Close = () => {
+    tg.close()// метод закрывает приложение.
+  }
   const [fromCurrency, setFromCurrency] = React.useState('EUR');//Переменная для исходной величины
   const [toCurrency, setToCurrency] = React.useState('USD');//Переменная для конвертированной величины
   const [fromPrice, setFromPrice] = React.useState(0);//Переменная, переключения ввода (левое поле ввода)
